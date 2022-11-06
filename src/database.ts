@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import { DataSource } from 'typeorm'
 import { ModuleUser } from './entities/implementations/ModuleUser'
 
-const AppDataSource = new DataSource({
+const database = new DataSource({
     type: 'postgres',
     host: 'localhost',
     port: 5432,
@@ -11,4 +11,4 @@ const AppDataSource = new DataSource({
     entities: [ModuleUser],
 })
 
-export { AppDataSource }
+export { database }

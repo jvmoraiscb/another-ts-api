@@ -1,10 +1,10 @@
 import { User } from '../../entities/User'
 import { IUsersRepository } from '../IUsersRepository'
-import { AppDataSource } from '../../AppDataSource'
+import { database } from '../../database'
 import { ModuleUser } from '../../entities/implementations/ModuleUser'
 
 export class PostgresUsersRepository implements IUsersRepository {
-    private repository = AppDataSource.getRepository(ModuleUser)
+    private repository = database.getRepository(ModuleUser)
 
     async findByEmail(email: string): Promise<User> {
         const moduleUser = this.repository.findOneBy({
