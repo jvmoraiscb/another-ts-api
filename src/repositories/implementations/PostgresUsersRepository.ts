@@ -1,7 +1,7 @@
 import { User } from '../../entities/User'
 import { IUsersRepository } from '../IUsersRepository'
 import { AppDataSource } from '../../AppDataSource'
-import { ModuleUser } from '../../entities/providers/ModuleUser'
+import { ModuleUser } from '../../entities/implementations/ModuleUser'
 
 export class PostgresUsersRepository implements IUsersRepository {
     private repository = AppDataSource.getRepository(ModuleUser)
